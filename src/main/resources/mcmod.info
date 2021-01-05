@@ -1,0 +1,18 @@
+[
+  {
+    "modid": "craphack",
+    "name": "Craphack",
+    "description": "A crappy and simple \"hacked\" client",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": [
+      "Gav06"
+    ],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]
