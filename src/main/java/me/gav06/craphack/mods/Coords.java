@@ -6,7 +6,6 @@ import me.gav06.craphack.Utils;
 import me.gav06.craphack.events.Event;
 import me.gav06.craphack.events.listeners.EventRenderGUI;
 import me.gav06.craphack.font.CFontRenderer;
-import net.minecraft.client.gui.GuiChat;
 import net.minecraft.client.gui.ScaledResolution;
 
 public class Coords extends Module {
@@ -26,8 +25,8 @@ public class Coords extends Module {
             int offset = 0;
             cfr.drawStringWithShadow(mainText, sr.getScaledWidth() - cfr.getStringWidth(mainText) - 3, sr.getScaledHeight() - cfr.getHeight() - 2 - offset, Utils.getRGB(8.0F, 1.0F, 0.6F));
 
-            String nether_shit = "Nether " + Utils.round(mc.player.posX / 8, 1) + ", " + Utils.round(mc.player.posZ, 1);
-            String overworld_shit = "Overworld " + Utils.round(mc.player.posX * 8, 1) + ", " + Utils.round(mc.player.posZ * 1, 1);
+            String nether_shit = "Nether " + Utils.round(mc.player.posX / 8, 1) + ", " + Utils.round(mc.player.posZ / 8, 1);
+            String overworld_shit = "Overworld " + Utils.round(mc.player.posX * 8, 1) + ", " + Utils.round(mc.player.posZ * 8, 1);
             switch (mc.player.dimension) {
                 case 0:
                     offset = 22;

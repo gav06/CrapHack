@@ -6,7 +6,6 @@ import me.gav06.craphack.events.hooks.KeyEvent;
 import me.gav06.craphack.mods.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -27,7 +26,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class Craphack {
     public static final String MOD_ID = "craphack";
     public static final String MOD_NAME = "CrapHack";
-    public static final String VERSION = "1.2";
+    public static final String VERSION = "1.3";
     @Mod.Instance("craphack")
     public static Craphack INSTANCE;
     public static CopyOnWriteArrayList<Module> mods = new CopyOnWriteArrayList();
@@ -54,16 +53,12 @@ public class Craphack {
         mods.add(new BHop("BHop", Keyboard.KEY_B, Module.Category.WORLD));
         mods.add(new Coords("Coords", Keyboard.KEY_V, Module.Category.RENDER));
         mods.add(new Fullbright("Fullbright", Keyboard.KEY_H, Module.Category.RENDER));
+        mods.add(new ChatSuffix("ChatAppend", Keyboard.KEY_J, Module.Category.PLAYER));
+        mods.add(new FastPlace("FastPlace", Keyboard.KEY_G, Module.Category.WORLD));
+        mods.add(new KillAura("KillAura", Keyboard.KEY_K, Module.Category.COMBAT));
+        mods.add(new PlayerList("Radar", Keyboard.KEY_P, Module.Category.RENDER));
 
-        Collections.sort(mods, this::compareTo);
-        //mods.add(new FakePlayer("FakePlayer", 25, Module.Category.PLAYER));
-
-        //mods.add(new CreativeFly("CreativeFly", 47, Module.Category.WORLD));
-        //mods.add(new Sprint("Sprint", 35, Module.Category.WORLD));
-        //mods.add(new BHop("BHop", 34, Module.Category.WORLD));
-        //mods.add(new Fullbright("Fullbright", 23, Module.Category.RENDER));
-        //mods.add(new AntiFog("AntiFog", 22, Module.Category.RENDER));
-        //mods.add(new ChatSuffix("ChatSuffix", 21, Module.Category.PLAYER));
+        mods.sort(this::compareTo);
     }
 
     public static FontRenderer fr;
